@@ -1,4 +1,3 @@
-from app.repository.CLI.CLI import CLIRepository
+from repository.CLI.CLI import CLIRepository
 
 cli = CLIRepository()
-
