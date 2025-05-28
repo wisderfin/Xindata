@@ -6,6 +6,8 @@ services:
       - "${OLLAMA_PORT}:${OLLAMA_PORT}"
     volumes:
       - ollama_data:/root/.ollama
+    networks:
+      - global
     restart: unless-stopped
 
   app:
@@ -13,6 +15,12 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: app
+    networks:
+      - global
+
+networks:
+  global:
+    driver: bridge
 
 volumes:
   ollama_data:

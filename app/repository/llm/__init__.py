@@ -1,3 +1,3 @@
-from repository.llm.prompts import Prompts
+from repository.llm.llm import LLMRepository
 
-prompts_enum = Prompts
+llm_repository = LLMRepository()

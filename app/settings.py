@@ -12,7 +12,7 @@ class Settings(BaseSettings):
         return f'http://{self.OLLAMA_HOST}:{self.OLLAMA_PORT}'
 
     class Config:
-        env_file = '.env'
+        env_file = 'app/.env'
         extra = 'allow'
 
 settings = Settings()
