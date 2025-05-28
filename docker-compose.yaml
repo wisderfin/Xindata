@@ -1,9 +1,9 @@
 services:
   ollama:
     image: ollama/ollama
-    container_name: ollama
+    container_name: ${OLLAMA_HOST}
     ports:
-      - "${ollama_port}:${ollama_port}"
+      - "${OLLAMA_PORT}:${OLLAMA_PORT}"
     volumes:
       - ollama_data:/root/.ollama
     restart: unless-stopped

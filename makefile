@@ -3,7 +3,7 @@ export $(shell sed -E '/^\s*#/d;/^\s*$$/d;s/=.*//' .env) # import all variables 
 
 first-run:
 	docker-compose up --build -d
-	docker-compose exec ollama ollama pull ${llm_model}
+	docker-compose exec ollama ollama pull ${LLM_MODEL}
 	docker-compose run app sh -c "uv run app"
 
 run:
