@@ -3,6 +3,7 @@
 .python-version
 build/
 *.egg-info
+uv.lock
 
 # cache
 __pycache__

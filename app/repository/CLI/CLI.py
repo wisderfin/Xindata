@@ -11,6 +11,3 @@ class CLIRepository:
             if question.lower() == "exit":
                 break
             typer.echo(f"{question}")
-
-
-cli = CLIRepository()
