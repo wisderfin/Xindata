@@ -1,6 +1,8 @@
 # virtual environment
 .venv
 .python-version
+build/
+*.egg-info
 
 # cache
 __pycache__

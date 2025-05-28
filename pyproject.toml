@@ -6,7 +6,7 @@ readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
     "pydantic-settings",
-    "typer[all]",
+    "typer",
     "pandas",
     "ollama"
 ]
