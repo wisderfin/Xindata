@@ -1,0 +1,12 @@
+[project]
+name = "xindata"
+version = "0.1.0"
+description = "test for xindata inc."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic-settings",
+    "typer[all]",
+    "pandas",
+    "ollama"
+]
