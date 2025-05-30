@@ -11,20 +11,20 @@
 
 
 ⚙️ Установка и запуск
-1. Клонирование репозитория
+### Клонирование репозитория
 ```sh
-git clone <your-repo-url>
-cd <project-directory>
+git clone https://github.com/wisderfin/Xindata.git
+cd Xindata
 ```
 
-2. Настройка .env
+### Настройка .env
 
 Создайте .env на основе .env.example:
 ```sh
 cp .env.example .env
 ```
 
-3. Первый запуск
+### Первый запуск
 
 Для первой установки и скачивания модели:
 
@@ -41,7 +41,7 @@ make first-run
 - Запустит CLI-интерфейс
 
 
-4. Последующие запуски
+### Последующие запуски
 ```sh
 make run
 ```
