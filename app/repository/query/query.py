@@ -1,5 +1,6 @@
 import pandas as pd
-from repository.llm import llm_repository as llm
+from repository.llm.llm import LLMRepository
+import json
 
 
 class QueryRepository:
@@ -10,11 +11,13 @@ class QueryRepository:
     def get(self, question: str) -> str:
         prompt = f"Give me the names of the columns you need to answer the next question. Just give me the names of the columns separated by commas. QUESTIONS: {question}"
         context = str(self.data.columns.tolist())
+        llm = LLMRepository()
         columns = llm.ask(question=prompt, context=context).split(", ")
         return self.concentrate(columns)
 
-    def concentrate(self, columns: list[str], question: str) -> str:
+    def concentrate(self, columns: list[str]) -> str:
         valid_columns = [col for col in columns if col in self.data.columns]
         filtered_data = self.data[valid_columns]
-        context = filtered_data.to_string(index=False)
-        return context
+        records = filtered_data.to_dict(orient="records")
+
+        return json.dumps(records, indent=0)
